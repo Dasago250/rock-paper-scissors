@@ -36,34 +36,78 @@ function PlayerDecision() {
 function PlayRound(ComputerDecision,PlayerDecision ) {
   console.log(ComputerDecision);
   console.log(PlayerDecision);
+
+  let playerWinsRoundMessage = "Player wins round!";
+  let computerWinsRoundMessage = "Computer wins round!";
+  let drawRoundMessage = "This round is a draw!";
   //It compares each choice and gives the winner or draw depending on the case
   switch (ComputerDecision) {
     case "Rock":
       if (PlayerDecision == "paper") {
-        return "Player Wins!";
+        console.log(playerWinsRoundMessage);
+        return "Player";
       }else if (PlayerDecision == "scissors") {
-        return "Computer Wins!";
+        console.log(computerWinsRoundMessage);
+        return "Computer";
       }else{
-        return "Draw!";
+        console.log(drawRoundMessage);
+        return "Draw";
       }
     case "Paper":
       if (PlayerDecision == "scissors") {
-        return "Player Wins!";
+        console.log(playerWinsRoundMessage);
+        return "Player";
       }else if (PlayerDecision == "rock") {
-        return "Computer Wins!";
+        console.log(computerWinsRoundMessage);
+        return "Computer";
       }else{
-        return "Draw!";
+        console.log(drawRoundMessage);
+        return "Draw";
       }
     case "Scissors":
       if (PlayerDecision == "rock") {
-        return "Player Wins!";
+        console.log(playerWinsRoundMessage);
+        return "Player";
       }else if (PlayerDecision == "paper") {
-        return "Computer Wins!";
+        console.log(computerWinsRoundMessage);
+        return "Computer";
       }else{
-        return "Draw!";
+        console.log(drawRoundMessage);
+        return "Draw";
       }
   }
 }
-console.log(PlayRound(ComputerDecision(),PlayerDecision()));
 
 // Game (Function)
+
+function Game() {
+  let winnerRound = "";
+  let playerScore = 0;
+  let computerScore = 0;
+  //Keeps score of each rounds winner 
+  for (let i = 0; i < 5; i++) {
+    winnerRound = PlayRound(ComputerDecision(),PlayerDecision());
+    console.log("");
+    switch (winnerRound) {
+      case "Player":
+        playerScore++;
+        break;
+      case "Computer":
+        computerScore++;
+        break;
+      default:
+        break;
+    }
+  }
+  //Compares the scores and prints the winner or in case a draw.
+  console.log(`Player's score: ${playerScore} - Computer's score: ${computerScore}\n`);
+  if (computerScore > playerScore){
+    console.log("Computer wins the game!");
+  }else if (playerScore > computerScore) {
+    console.log("Player wins the game!");
+  }else{
+    console.log("It's a draw...");
+  }
+}
+
+Game();
