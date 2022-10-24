@@ -39,10 +39,15 @@ choices.forEach(choice => {
     PlayRound(ComputerDecision(),choiceValue);
 })})
 
+let playerTextChoice = document.querySelector('.playerChoice');
+let computerTextChoice = document.querySelector('.computerChoice')
+let roundTextResult = document.querySelector('.roundResult')
+
+
 // PlayRound
 function PlayRound(ComputerDecision,PlayerDecision ) {
-  console.log(ComputerDecision);
-  console.log(PlayerDecision);
+  computerTextChoice.textContent = ComputerDecision;
+  playerTextChoice.textContent = PlayerDecision;
 
   let playerWinsRoundMessage = "Player wins round!";
   let computerWinsRoundMessage = "Computer wins round!";
@@ -51,39 +56,41 @@ function PlayRound(ComputerDecision,PlayerDecision ) {
   switch (ComputerDecision) {
     case "Rock":
       if (PlayerDecision == "Paper") {
-        console.log(playerWinsRoundMessage);
+        roundTextResult.textContent = playerWinsRoundMessage;
         return "Player";
       }else if (PlayerDecision == "Scissors") {
-        console.log(computerWinsRoundMessage);
+        roundTextResult.textContent = computerWinsRoundMessage;
         return "Computer";
       }else{
-        console.log(drawRoundMessage);
+        roundTextResult.textContent = drawRoundMessage;
         return "Draw";
       }
     case "Paper":
       if (PlayerDecision == "Scissors") {
-        console.log(playerWinsRoundMessage);
+        roundTextResult.textContent = playerWinsRoundMessage;
         return "Player";
       }else if (PlayerDecision == "Rock") {
-        console.log(computerWinsRoundMessage);
+        roundTextResult.textContent = computerWinsRoundMessage;
         return "Computer";
       }else{
-        console.log(drawRoundMessage);
+        roundTextResult.textContent = drawRoundMessage;
         return "Draw";
       }
     case "Scissors":
       if (PlayerDecision == "Rock") {
-        console.log(playerWinsRoundMessage);
+        roundTextResult.textContent = playerWinsRoundMessage;
         return "Player";
       }else if (PlayerDecision == "Paper") {
-        console.log(computerWinsRoundMessage);
+        roundTextResult.textContent = computerWinsRoundMessage;
         return "Computer";
       }else{
-        console.log(drawRoundMessage);
+        roundTextResult.textContent = drawRoundMessage;
         return "Draw";
       }
   }
 }
+
+
 
 // Game (Function)
 /*
