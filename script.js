@@ -31,6 +31,13 @@ function PlayerDecision() {
   return playerChoice;
 }
 
+let choices = document.querySelectorAll('.choice')
+
+choices.forEach(choice => {
+  let choiceValue = choice.getAttribute('id');
+  choice.addEventListener('click', () => {
+    PlayRound(ComputerDecision(),choiceValue);
+})})
 
 // PlayRound
 function PlayRound(ComputerDecision,PlayerDecision ) {
@@ -43,10 +50,10 @@ function PlayRound(ComputerDecision,PlayerDecision ) {
   //It compares each choice and gives the winner or draw depending on the case
   switch (ComputerDecision) {
     case "Rock":
-      if (PlayerDecision == "paper") {
+      if (PlayerDecision == "Paper") {
         console.log(playerWinsRoundMessage);
         return "Player";
-      }else if (PlayerDecision == "scissors") {
+      }else if (PlayerDecision == "Scissors") {
         console.log(computerWinsRoundMessage);
         return "Computer";
       }else{
@@ -54,10 +61,10 @@ function PlayRound(ComputerDecision,PlayerDecision ) {
         return "Draw";
       }
     case "Paper":
-      if (PlayerDecision == "scissors") {
+      if (PlayerDecision == "Scissors") {
         console.log(playerWinsRoundMessage);
         return "Player";
-      }else if (PlayerDecision == "rock") {
+      }else if (PlayerDecision == "Rock") {
         console.log(computerWinsRoundMessage);
         return "Computer";
       }else{
@@ -65,10 +72,10 @@ function PlayRound(ComputerDecision,PlayerDecision ) {
         return "Draw";
       }
     case "Scissors":
-      if (PlayerDecision == "rock") {
+      if (PlayerDecision == "Rock") {
         console.log(playerWinsRoundMessage);
         return "Player";
-      }else if (PlayerDecision == "paper") {
+      }else if (PlayerDecision == "Paper") {
         console.log(computerWinsRoundMessage);
         return "Computer";
       }else{
@@ -79,7 +86,7 @@ function PlayRound(ComputerDecision,PlayerDecision ) {
 }
 
 // Game (Function)
-
+/*
 function Game() {
   let winnerRound = "";
   let playerScore = 0;
@@ -111,3 +118,5 @@ function Game() {
 }
 
 Game();
+
+*/
