@@ -9,6 +9,7 @@ let computerScore = 0
 //Results INFO
 let roundTextResult = document.querySelector('.roundResult');
 let winner = document.querySelector('.Winner');
+let reset = document.querySelector('.reset')
 
 //Know when the game is over
 let gameOn = true;
@@ -110,3 +111,15 @@ function  keepScores() {
     }
   }
 }
+
+//Reset the game
+reset.addEventListener('click', () =>{
+  gameOn = true;
+  roundTextResult.textContent = "";
+  playerTextChoice.textContent = "";
+  playerScore = 0;
+  playerTextScore.textContent = playerScore;
+  computerTextChoice.textContent = "";
+  computerScore = 0;
+  computerTextScore.textContent = computerScore;
+})
