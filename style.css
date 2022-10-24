@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(./Fonts/Roboto-Medium.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -8,9 +15,91 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: 'Roboto';
 }
 header h1{
   color: #00FFCC;
   font-weight: bold;
   font-size: 50px;
+}
+
+/*-------------------------Main----------------------------*/
+main{
+  flex: 1 1 auto;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .screen{
+  background-color: #00FFCC;
+  width: 700px;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  color: #331940;
+  border-radius: 50px;
+  border: 5px solid #0CCA98;
+}
+
+main .screen .textChoices{
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+main .screen .textChoices  .info{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 200px;
+}
+main .screen .textChoices .info p{
+  font-size: 30px;
+}
+main .screen .textChoices .info .playerChoice,
+main .screen .textChoices .info .computerChoice{
+  font-size: 20px;
+}
+
+main .screen .textChoices .info .playerScore,
+main .screen .textChoices .info .computerScore{
+  font-size: 20px;
+}
+
+main .screen .choices{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+main .screen .choices .choice{
+  width: 150px;
+  height: 70px;
+  background-color: #5E366A;
+  color: #00FFCC;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+main .screen .results{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main .screen .reset{
+  width: 70px;
+  height: 35px;
+  background-color: #C47AFF;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
 }
