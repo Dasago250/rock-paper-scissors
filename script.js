@@ -122,4 +122,5 @@ reset.addEventListener('click', () =>{
   computerTextChoice.textContent = "";
   computerScore = 0;
   computerTextScore.textContent = computerScore;
+  winner.textContent = "";
 })
