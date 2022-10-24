@@ -103,3 +103,16 @@ main .screen .reset{
   border-radius: 5px;
   font-size: 15px;
 }
+/*---------------------Footer--------------------------*/
+footer{
+  align-self: stretch;
+  background-color: #00FFCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #331940;
+}
